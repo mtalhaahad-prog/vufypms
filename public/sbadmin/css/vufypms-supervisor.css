@@ -1,0 +1,255 @@
+/* ============================================================
+   VUFYPMS Supervisor Theme
+   SB Admin ke upar professional polish - student theme se match
+   ============================================================ */
+
+/* ---- 1. Font: Inter (student portal jaisa) ---- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+body {
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  background: #f4f6fb;
+  letter-spacing: -0.011em;
+  color: #0f172a;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+/* ---- 2. Top Navbar: navy gradient ---- */
+.sb-topnav {
+  background: linear-gradient(90deg, #0f172a 0%, #1e293b 100%) !important;
+  box-shadow: 0 2px 16px rgba(2, 6, 23, 0.25);
+}
+
+.navbar-brand {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.navbar-brand .brand-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  margin-right: 8px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+  font-size: 15px;
+}
+
+/* ---- 3. Sidebar: deep navy + indigo active ---- */
+.sb-sidenav-dark {
+  background: linear-gradient(180deg, #0f172a 0%, #111c33 60%, #131a2e 100%);
+}
+
+.sb-sidenav-dark .sb-sidenav-menu .nav-link {
+  color: #94a3b8;
+  border-radius: 10px;
+  margin: 2px 10px;
+  padding: 10px 14px;
+  transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease;
+  border-left: 3px solid transparent;
+}
+
+.sb-sidenav-dark .sb-sidenav-menu .nav-link:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.06);
+  transform: translateX(2px);
+}
+
+.sb-sidenav-dark .sb-sidenav-menu .nav-link.active {
+  color: #fff;
+  background: linear-gradient(90deg, rgba(99, 102, 241, 0.25), rgba(99, 102, 241, 0.05));
+  border-left: 3px solid #818cf8;
+}
+
+.sb-sidenav-dark .sb-sidenav-menu .nav-link .sb-nav-link-icon {
+  color: inherit;
+}
+
+.sb-sidenav-menu-heading {
+  color: #64748b;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.sb-sidenav-footer {
+  background: #0b1222;
+  font-weight: 600;
+}
+
+/* ---- 4. Cards ---- */
+.card {
+  border: 1px solid #e5eaf2;
+  border-radius: 16px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 8px 24px rgba(15, 23, 42, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 2px 4px rgba(15, 23, 42, 0.04), 0 16px 40px rgba(15, 23, 42, 0.09);
+}
+
+/* Stat cards par hover lift */
+.row > [class*='col-'] > .card.h-100:hover {
+  transform: translateY(-3px);
+}
+
+.card-header {
+  background: #fff;
+  border-bottom: 1px solid #eef1f7;
+  border-radius: 16px 16px 0 0 !important;
+  font-size: 14px;
+  padding: 14px 18px;
+}
+
+/* ---- 5. Breadcrumb ---- */
+.breadcrumb {
+  background: transparent;
+  padding-left: 0;
+  font-size: 13px;
+}
+
+.breadcrumb-item.active {
+  color: #64748b;
+}
+
+h1.mt-4 {
+  font-size: 26px;
+}
+
+/* ---- 6. Buttons ---- */
+.btn {
+  border-radius: 10px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  border: none;
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.3);
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  background: linear-gradient(135deg, #5458ee, #4338ca);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
+}
+
+.btn-outline-primary {
+  color: #4f46e5;
+  border-color: #c7d2fe;
+}
+
+.btn-outline-primary:hover {
+  background: #4f46e5;
+  border-color: #4f46e5;
+}
+
+.btn-warning {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  border: none;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3);
+}
+
+.btn-warning:hover {
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+/* ---- 7. Tables ---- */
+.table thead th, .table-light th {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #64748b;
+  background: #f8fafd !important;
+  border-bottom: 2px solid #e5eaf2;
+}
+
+.table tbody tr {
+  transition: background 0.15s ease;
+}
+
+.table-hover tbody tr:hover, .table tbody tr:hover {
+  background: #f8faff;
+}
+
+.table td {
+  border-color: #eef2f8;
+}
+
+/* ---- 8. Badges & Progress ---- */
+.badge {
+  font-weight: 600;
+  border-radius: 99px;
+  padding: 5px 12px;
+}
+
+.progress {
+  background: #eef1f8;
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.progress-bar.bg-success { background: linear-gradient(90deg, #10b981, #059669) !important; }
+.progress-bar.bg-warning { background: linear-gradient(90deg, #fbbf24, #d97706) !important; }
+.progress-bar.bg-danger  { background: linear-gradient(90deg, #f87171, #dc2626) !important; }
+
+/* ---- 9. Forms ---- */
+.form-control, .form-select {
+  border-radius: 10px;
+  border-color: #e5eaf2;
+  transition: box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.12);
+}
+
+/* ---- 10. Dropdown & Modal ---- */
+.dropdown-menu {
+  border: 1px solid #e5eaf2;
+  border-radius: 12px;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
+}
+
+.modal-content {
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 24px 64px rgba(15, 23, 42, 0.18);
+}
+
+/* ---- 11. Alerts ---- */
+.alert {
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 8px 24px rgba(15, 23, 42, 0.05);
+}
+
+/* ---- 12. Footer ---- */
+footer.bg-light {
+  background: transparent !important;
+  border-top: 1px solid #e5eaf2;
+}
+
+/* ---- 13. Sidebar scrollbar ---- */
+.sb-sidenav::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sb-sidenav::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 99px;
+}
