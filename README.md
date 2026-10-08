@@ -1,59 +1,143 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# VUFYPMS — Final Year Project Management System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A Laravel-based academic project designed to help manage the **Final Year Project (FYP)** lifecycle at a university, from team formation and proposals through milestones, submissions, and evaluation.
 
-## About Laravel
+**Tech stack:** Laravel 12 · PHP · MySQL  
+**User areas:** Guest · Student · Supervisor · Admin  
+**Project type:** Academic / portfolio project
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Preview
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+![VUFYPMS homepage showing the project overview and core workflows](docs/screenshots/homepage.png)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Overview
 
-## Learning Laravel
+VUFYPMS (Virtual University Final Year Project Management System) organizes FYP-related information in one web application. The interface presents role-specific areas for students, supervisors, and administrators, along with public information for guests.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+The project is intended to make the project lifecycle easier to follow, from the initial proposal toward final defense.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Core workflows
 
-## Laravel Sponsors
+The project interface highlights the following workflows:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+- **Team formation:** Organizing student teams and their membership.
+- **Proposal workflow:** Handling project proposals and supervisor feedback.
+- **Milestone tracking:** Following progress from early documentation to final defense.
+- **Project information:** Presenting guidelines, projects, and announcements.
+- **Documentation and evaluation:** Supporting the submission and review stages of the FYP lifecycle.
 
-### Premium Partners
+> **Implementation note:** This section describes the workflows presented by the project. Please check the repository's current code before describing any feature as fully implemented or production-ready.
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+## User roles
 
-## Contributing
+| Role | Area of the system |
+| --- | --- |
+| **Guest** | Public project information and entry points for sign-in/registration. |
+| **Student** | Student-focused FYP management workflows. |
+| **Supervisor** | Supervision and review-related workflows. |
+| **Admin** | Administrative project-management workflows. |
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Technologies
 
-## Code of Conduct
+| Component | Technology |
+| --- | --- |
+| Backend framework | Laravel 12 |
+| Server-side language | PHP |
+| Database | MySQL |
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Getting started (local development)
 
-## Security Vulnerabilities
+The steps below follow a standard Laravel workflow. Your local environment and the repository's actual configuration may require adjustments.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### Prerequisites
 
-## License
+- PHP 8.2 or newer (compatible with Laravel 12)
+- Composer
+- MySQL
+- Node.js and npm, **if** your frontend assets require building
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/mtalhaahad-prog/vufypms.git
+cd vufypms
+```
+
+### 2. Install PHP dependencies
+
+```bash
+composer install
+```
+
+### 3. Create your environment file
+
+On macOS/Linux:
+
+```bash
+cp .env.example .env
+```
+
+On Windows Command Prompt:
+
+```bat
+copy .env.example .env
+```
+
+Generate an app key:
+
+```bash
+php artisan key:generate
+```
+
+### 4. Configure MySQL
+
+Create a local database, then update the database connection values in `.env`:
+
+```dotenv
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=vufypms
+DB_USERNAME=your_local_db_username
+DB_PASSWORD=your_local_db_password
+```
+
+Never commit your real `.env` file or credentials to GitHub.
+
+### 5. Create the database tables
+
+If the repository includes the required migrations, run:
+
+```bash
+php artisan migrate
+```
+
+If a SQL import or seed step is required instead, follow your project's database setup instructions.
+
+### 6. Run the application
+
+```bash
+php artisan serve
+```
+
+Open the local address shown in your terminal (usually `http://127.0.0.1:8000`).
+
+If the repository has a frontend build script, run the following in another terminal:
+
+```bash
+npm install
+npm run dev
+```
+
+## Screenshots
+
+The screenshot above is the VUFYPMS homepage image used in the developer's portfolio. Additional screenshots of the student, supervisor, and admin dashboards can be added as they become available.
+
+## Development context
+
+VUFYPMS was developed as an academic project to practice backend web development, database-driven application design, and role-based interfaces using Laravel, PHP, and MySQL.
+
+## Author
+
+**Muhammad Talha Ahad**  
+[GitHub profile](https://github.com/mtalhaahad-prog) · [Portfolio](https://mtalhaahadportfolio.netlify.app/)
