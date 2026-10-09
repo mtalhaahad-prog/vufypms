@@ -118,6 +118,8 @@ If a SQL import or seed step is required instead, follow your project's database
 
 ```bash
 php artisan serve
+
+Make sure your dot env database settings match your local MySQL.
 ```
 
 Open the local address shown in your terminal (usually `http://127.0.0.1:8000`).
