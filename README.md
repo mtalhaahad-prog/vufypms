@@ -25,6 +25,7 @@ The project interface highlights the following workflows:
 - **Milestone tracking:** Following progress from early documentation to final defense.
 - **Project information:** Presenting guidelines, projects, and announcements.
 - **Documentation and evaluation:** Supporting the submission and review stages of the FYP lifecycle.
+- note some workflows are described but may not be fully implemented yet.
 
 > **Implementation note:** This section describes the workflows presented by the project. Please check the repository's current code before describing any feature as fully implemented or production-ready.
 
